@@ -1,86 +1,180 @@
+
 # AI Speech Trainer Agent 🎙️
 > **Multimodal Public Speaking Coach powered by Agno**
 
-[![Author](https://img.shields.io/badge/Author-Danish%20(Dan--445)-blue.svg)](https://github.com/Dan-445)
+[![Author](https://img.shields.io/badge/Author-Hazbilal3-blue.svg)](https://github.com/Hazbilal3)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Agno](https://img.shields.io/badge/Framework-Agno-purple.svg)](https://github.com/agno-agi/agno)
+[![Framework](https://img.shields.io/badge/Framework-Agno-purple.svg)](https://github.com/agno-agi/agno)
 [![Multimodal](https://img.shields.io/badge/Analysis-Video%20%2B%20Audio%20%2B%20Text-green.svg)]()
 
-The **AI Speech Trainer** is a multimodal coach that helps you master public speaking. By analyzing your video presentations, it evaluates your facial expressions, voice modulation, and speech content to provide comprehensive, actionable feedback.
+The **AI Speech Trainer Agent** is a multimodal public speaking coach designed to help you improve your **delivery, confidence, and clarity**.
+
+By analyzing uploaded **video presentations**, the system evaluates:
+- Facial expressions and eye contact
+- Voice modulation, pace, and filler words
+- Speech content, structure, and persuasion
+
+It then generates a **professional, actionable feedback report**, similar to what a human speech coach would provide.
+
+This README is structured specifically for the **ai_agent** repository.
+
+---
 
 ## 🏗 Architecture
 
-The system employs a collaborative team of specialized agents, orchestrated by a central Coordinator.
+The system follows a **Coordinator-based Multi-Agent Architecture**, where each agent specializes in a single modality and reports back to a central orchestrator.
 
 ```mermaid
 graph TD
-    User([User Video Input]) --> App[Streamlit App]
-    App --> Coordinator[Coordinator Agent]
-    
-    subgraph "Multimodal Analysis Team"
-    Coordinator --> Facial[Facial Expression Agent]
-    Coordinator --> Vocal[Vocal Analysis Agent]
-    Coordinator --> Content[Content Agent]
-    
-    Facial -- "Emotions & Eye Contact" --> Coordinator
-    Vocal -- "Pace, Pitch & Fillers" --> Coordinator
-    Content -- "Clarity & Structure" --> Coordinator
+    User([User Video Input]) --> UI[Streamlit App]
+    UI --> Coordinator[Coordinator Agent]
+
+    subgraph Multimodal_Analysis_Team
+        Coordinator --> Facial[Facial Expression Agent]
+        Coordinator --> Vocal[Vocal Analysis Agent]
+        Coordinator --> Content[Content Analysis Agent]
+
+        Facial -->|Emotions & Eye Contact| Coordinator
+        Vocal -->|Pace, Pitch & Fillers| Coordinator
+        Content -->|Clarity & Structure| Coordinator
     end
-    
+
     Coordinator --> Feedback[Feedback Agent]
-    Feedback -- "Comprehensive Report" --> App
-    
+    Feedback -->|Comprehensive Report| UI
+
     style Coordinator fill:#f9f,stroke:#333
-```
+````
+
+---
 
 ## ✨ Features
 
-- **🙂 Facial Analysis**: Tracks emotions, eye contact, and engagement using OpenCV & DeepFace.
-- **🗣️ Vocal Analysis**: Detects speech pace, pitch variations, clarity, and filler words using Whisper & Librosa.
-- **📝 Content Evaluation**: Analyzes your speech text for structure, tone, and persuasiveness using GPT-4o/Llama.
-- **📊 Comprehensive Scoring**: Provides an aggregated score based on a professional rubric with specific strengths and weaknesses.
+### 🙂 Facial Expression Analysis
+
+* Tracks facial emotions and engagement
+* Evaluates eye contact consistency
+* Powered by OpenCV and DeepFace
+
+### 🗣️ Vocal Analysis
+
+* Measures speech pace and pauses
+* Detects pitch variation and monotony
+* Identifies filler words such as “um”, “uh”, and “you know”
+* Uses Faster-Whisper and Librosa
+
+### 📝 Content Evaluation
+
+* Analyzes clarity, structure, and flow
+* Evaluates tone, confidence, and persuasiveness
+* Uses large language models for semantic analysis
+
+### 📊 Comprehensive Scoring
+
+* Aggregated score using a professional rubric
+* Clear strengths, weaknesses, and improvement tips
+* Actionable guidance you can apply immediately
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.10+
-- **Together AI API Key** (configured in `.env` or UI)
-- `ffmpeg` installed on your system (for audio processing)
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Dan-445/awesome-llm-apps.git
-   cd advanced_ai_agents/multi_agent_apps/speech_trainer_agent
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Configure Environment**
-   Create a `.env` file (optional, or enter in UI):
-   ```bash
-   TOGETHER_API_KEY=your_api_key_here
-   ```
-
-4. **Run the Application**
-   ```bash
-   streamlit run main.py
-   ```
-
-5. **Usage**
-   - Open the Streamlit app in your browser.
-   - Upload a short video clip (15-30s recommended for demo).
-   - Click "Analyze" and wait for your personalized feedback report.
-
-## 🛠 Tech Stack
-- **Frontend**: Streamlit
-- **Agent Framework**: Agno
-- **AI Models**: Llama-3.3-70B (via Together AI), Faster-Whisper, DeepFace
+* Python 3.10+
+* Together AI API Key
+* `ffmpeg` installed and available in system PATH
 
 ---
 
-**Created by [Danish (Dan-445)](https://github.com/Dan-445)**
+## ⚙️ Installation
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/Hazbilal3/ai_agent.git
+cd ai_agent/speech_trainer_agent
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 3️⃣ Configure Environment
+
+Create a `.env` file (optional) or enter the key directly in the UI:
+
+```env
+TOGETHER_API_KEY=your_api_key_here
+```
+
+---
+
+### 4️⃣ Run the Application
+
+```bash
+streamlit run main.py
+```
+
+---
+
+### 5️⃣ How to Use
+
+1. Open the Streamlit app in your browser
+2. Upload a short video clip (15–30 seconds recommended)
+3. Click **Analyze**
+4. Wait for multimodal analysis to complete
+5. Review your personalized feedback report
+
+---
+
+## 🛠 Tech Stack
+
+* **Frontend**: Streamlit
+* **Agent Framework**: Agno
+* **LLMs**: Llama-3.3-70B (via Together AI)
+* **Speech Processing**: Faster-Whisper, Librosa
+* **Vision Analysis**: OpenCV, DeepFace
+* **Language**: Python
+
+---
+
+## 📁 Project Structure
+
+```text
+speech_trainer_agent/
+├── README.md
+├── requirements.txt
+├── main.py
+├── agents/
+│   ├── coordinator.py
+│   ├── facial_agent.py
+│   ├── vocal_agent.py
+│   ├── content_agent.py
+│   └── feedback_agent.py
+├── utils/
+│   ├── video_utils.py
+│   └── audio_utils.py
+```
+
+---
+
+## 📌 Notes
+
+* Short videos process faster and give more accurate feedback
+* Clear lighting and audio significantly improve results
+* Designed for **training and coaching purposes only**
+* Not intended for medical or psychological diagnosis
+
+---
+
+## 🙌 Credits
+
+Inspired by multimodal AI coaching systems
+Adapted and maintained for the **ai_agent** repository by **Hazbilal3**
+
