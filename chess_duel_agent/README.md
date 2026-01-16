@@ -4,7 +4,7 @@
 
 A Streamlit-based chess application where **two AI agents** play chess against each other while a **Board Proxy (Validator Agent)** enforces legal moves, manages turns, and controls the game state.
 
-This project lives inside the `aqi_analysis_agent` repository under the `chess_duel_agent` directory.
+This project lives inside the `ai_agent` repository under the `chess_duel_agent` directory.
 
 ---
 
@@ -40,7 +40,7 @@ This project lives inside the `aqi_analysis_agent` repository under the `chess_d
 ## 📂 Project Location
 
 ```text
-aqi_analysis_agent/
+ai_agent/
  └── chess_duel_agent/
      ├── README.md
      ├── requirements.txt
@@ -62,8 +62,8 @@ Structure may vary slightly based on your implementation.
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/Hazbilal3/aqi_analysis_agent.git
-cd aqi_analysis_agent/chess_duel_agent
+git clone https://github.com/Hazbilal3/ai_agent.git
+cd ai_agent/chess_duel_agent
 ```
 
 ---
