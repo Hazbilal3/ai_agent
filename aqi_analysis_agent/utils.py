@@ -1,6 +1,6 @@
 """
 Utility functions for the AQI Analysis Agent.
-Author: Prithvi (Prith-her)
+Author: Hazbilal3
 """
 import logging
 

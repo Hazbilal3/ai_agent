@@ -1,7 +1,7 @@
 # AQI Analysis Agent 🌍
 > **Real-Time Air Quality Monitoring & Health Advice**
 
-[![Author](https://img.shields.io/badge/Author-Dan--445-blue.svg)](https://github.com/Dan-445)
+[![Author](https://img.shields.io/badge/Author-Hazbilal3-blue.svg)](https://github.com/Hazbilal3)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Firecrawl](https://img.shields.io/badge/Firecrawl-Scraping-orange.svg)](https://www.firecrawl.dev/)
 [![Agno](https://img.shields.io/badge/Agno-Agent%20Framework-purple.svg)](https://github.com/agno-agi/agno)
@@ -51,7 +51,7 @@ graph TD
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Dan-445/awesome-llm-apps.git
+   git clone https://github.com/Hazbilal3/aqi_analysis_agent.git
    cd advanced_ai_agents/multi_agent_apps/aqi_analysis_agent
    ```
 
@@ -74,4 +74,4 @@ graph TD
 
 ---
 
-**Created by [Dan-445](https://github.com/Dan-445)**
+**Created by [Hazbilal3](https://github.com/Hazbilal3)**

@@ -1,6 +1,6 @@
 """
 Gradio UI for the AQI Analysis Agent.
-Author: Prithvi (Prith-her)
+Author: Hazbilal3
 """
 import gradio as gr
 import json

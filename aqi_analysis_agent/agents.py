@@ -1,6 +1,6 @@
 """
 Core agent logic for AQI Analysis and Health Recommendations.
-Author: Danish (Dan-445)
+Author: Hazbilal3
 """
 import logging
 import json
