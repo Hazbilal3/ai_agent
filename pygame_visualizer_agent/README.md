@@ -1,54 +1,188 @@
+
 # 🎮 AI 3D PyGame Visualizer with DeepSeek R1
+> **Natural Language → PyGame Code → Live 3D Visualization**
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-ai-3d-pygame-visualizer-with-deepseek-r1) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+### 🎓 FREE Step-by-Step Tutorial  
+👉 https://www.theunwindai.com/p/build-an-ai-3d-pygame-visualizer-with-deepseek-r1  
 
-This Project demonstrates R1's code capabilities with a PyGame code generator and visualizer with browser use. The system uses DeepSeek for reasoning, OpenAI for code extraction, and browser automation agents to visualize the code on Trinket.io.
+Learn how to build this system from scratch with detailed explanations, code walkthroughs, and best practices.
 
-### Features
+---
 
-- Generates PyGame code from natural language descriptions
-- Uses DeepSeek Reasoner for code logic and explanation
-- Extracts clean code using OpenAI GPT-4o
-- Automates code visualization on Trinket.io using browser agents
-- Provides a streamlined Streamlit interface
-- Multi-agent system for handling different tasks (navigation, coding, execution, viewing)
+The **AI 3D PyGame Visualizer Agent** is a multi-agent AI system that converts **natural language descriptions** into executable **PyGame code** and automatically visualizes it in the browser.
 
-### How to get Started?
+It combines:
+- **DeepSeek R1** for deep reasoning and code logic
+- **OpenAI (GPT-4o)** for clean code extraction
+- **Browser automation agents** to run and visualize code on **Trinket.io**
+- **Streamlit** for a smooth user interface
 
-1. Clone the GitHub repository
+This implementation is adapted specifically for the **ai_agent** repository.
+
+---
+
+## ✨ Features
+
+- Generate PyGame code from plain English descriptions
+- Deep reasoning and explanation using DeepSeek R1
+- Clean, executable code extraction using OpenAI GPT-4o
+- Automatic browser-based visualization via Trinket.io
+- Streamlit-powered interactive UI
+- Multi-agent architecture for:
+  - Reasoning
+  - Code generation
+  - Browser navigation
+  - Code execution
+  - Visualization
+
+---
+
+## 🧠 How It Works
+
+1. **User Input**  
+   The user enters a natural language description of a PyGame or 3D visualization.
+
+2. **Code Reasoning**  
+   DeepSeek R1 analyzes the request and produces detailed reasoning along with code logic.
+
+3. **Code Extraction**  
+   OpenAI GPT-4o extracts clean, runnable PyGame code from the reasoning output.
+
+4. **Browser Automation**  
+   Browser agents:
+   - Open Trinket.io
+   - Paste the generated code
+   - Run the program
+   - Display the live visualization
+
+5. **User Interface**  
+   Streamlit manages inputs, outputs, logs, and visualization flow.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.10+
+- DeepSeek API Key
+- OpenAI API Key
+- Internet access (for Trinket.io visualization)
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-cd awesome-llm-apps/ai_agent_tutorials/ai_3dpygame_r1
-```
+git clone https://github.com/Hazbilal3/ai_agent.git
+cd ai_agent/pygame_visualizer_agent
+````
 
-2. Install the required dependencies:
+---
+
+### 2️⃣ Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Get your API Keys
-- Sign up for [DeepSeek](https://platform.deepseek.com/) and obtain your API key
-- Sign up for [OpenAI](https://platform.openai.com/) and obtain your API key
+---
 
-4. Run the AI PyGame Visualizer
+### 3️⃣ Configure API Keys
+
+**Linux / macOS**
+
+```bash
+export DEEPSEEK_API_KEY="your_deepseek_api_key"
+export OPENAI_API_KEY="your_openai_api_key"
+```
+
+**Windows PowerShell**
+
+```powershell
+setx DEEPSEEK_API_KEY "your_deepseek_api_key"
+setx OPENAI_API_KEY "your_openai_api_key"
+```
+
+---
+
+### 4️⃣ Run the Application
+
 ```bash
 streamlit run ai_3dpygame_r1.py
 ```
 
-5. Browser use automatically opens your web browser and navigate to the URL provided in the console output to interact with the PyGame generator.
+---
 
-### How it works?
+### 5️⃣ Visualization
 
-1. **Query Processing:** User enters a natural language description of the desired PyGame visualization.
-2. **Code Generation:** 
-   - DeepSeek Reasoner analyzes the query and provides detailed reasoning with code
-   - OpenAI agent extracts clean, executable code from the reasoning
-3. **Visualization:**
-   - Browser agents automate the process of running code on Trinket.io
-   - Multiple specialized agents handle different tasks:
-     - Navigation to Trinket.io
-     - Code input
-     - Execution
-     - Visualization viewing
-4. **User Interface:** Streamlit provides an intuitive interface for entering queries, viewing code, and managing the visualization process.
+* The system will automatically open your browser
+* Follow the URL shown in the console output
+* Interact with the generated PyGame visualization on Trinket.io
+
+---
+
+## 🧩 Multi-Agent Architecture
+
+### Agents Involved
+
+* **Reasoning Agent (DeepSeek R1)**
+  Understands the problem and designs the PyGame logic.
+
+* **Code Extractor Agent (OpenAI GPT-4o)**
+  Converts reasoning output into clean, executable PyGame code.
+
+* **Browser Navigation Agent**
+  Opens Trinket.io and navigates the UI.
+
+* **Execution Agent**
+  Pastes code and runs it in the browser.
+
+* **Visualization Agent**
+  Handles rendering and viewing of the output.
+
+---
+
+## 🛠 Tech Stack
+
+* **LLMs**: DeepSeek R1, OpenAI GPT-4o
+* **Frontend**: Streamlit
+* **Visualization**: PyGame via Trinket.io
+* **Automation**: Browser automation agents
+* **Language**: Python
+
+---
+
+## 📁 Project Structure
+
+```text
+pygame_visualizer_agent/
+├── README.md
+├── requirements.txt
+├── ai_3dpygame_r1.py
+├── agents/
+│   ├── reasoning_agent.py
+│   ├── code_extractor.py
+│   ├── browser_navigator.py
+│   ├── execution_agent.py
+│   └── visualization_agent.py
+├── utils/
+│   └── helpers.py
+```
+
+---
+
+## 📌 Notes
+
+* Designed for experimentation and learning
+* Requires active internet for Trinket.io
+* Generated code can be copied and run locally
+* Complex 3D scenes may take longer to render
+
+---
+
+## 🙌 Credits
+
+Original concept inspired by **awesome-llm-apps**
+Adapted and structured for the **ai_agent** repository by **Hazbilal3**
