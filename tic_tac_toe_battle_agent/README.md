@@ -1,115 +1,198 @@
-# 🎮 Agent X vs Agent O: Tic-Tac-Toe Game
 
-An interactive Tic-Tac-Toe game where two AI agents powered by different language models compete against each other built on Agno Agent Framework and Streamlit as UI.
+# 🎮 Tic Tac Toe Battle Agent (AI vs AI)
 
-This example shows how to build an interactive Tic Tac Toe game where AI agents compete against each other. The application showcases how to:
-- Coordinate multiple AI agents in a turn-based game
-- Use different language models for different players
-- Create an interactive web interface with Streamlit
-- Handle game state and move validation
-- Display real-time game progress and move history
+An interactive **AI vs AI Tic-Tac-Toe game** where two autonomous agents powered by different Large Language Models (LLMs) compete against each other.
 
-## Features
-- Multiple AI models support (GPT-4, Claude, Gemini, etc.)
-- Real-time game visualization
-- Move history tracking with board states
-- Interactive player selection
-- Game state management
-- Move validation and coordination
+This project is built using the **Agno Agent Framework** for multi-agent coordination and **Streamlit** for the interactive web UI.
 
-## How to Run? 
+---
 
-1. **Setup Environment**
-   ```bash
-   # Clone the repository
-   git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-   cd advanced_ai_agents/autonomous_game_playing_agent_apps/ai_tic_tac_toe_agent
+## 🚀 Project Highlights
 
-   # Install dependencies
-   pip install -r requirements.txt
-   ```
+This project demonstrates how to:
 
-### 2. Install dependencies
+- Coordinate **multiple AI agents** in a turn-based game
+- Use **different LLMs** for each player
+- Manage **game state & rule validation**
+- Build a **real-time interactive UI** with Streamlit
+- Track **move history and board states**
+- Compare strategies of different AI models
 
-```shell
+---
+
+## ✨ Features
+
+- 🤖 AI vs AI gameplay (Agent X vs Agent O)
+- 🔁 Turn-based coordination via Master (Referee) Agent
+- 🧠 Supports multiple LLM providers
+- 📊 Move history with board visualization
+- 🎯 Real-time board updates
+- 🔄 Reset & replay functionality
+- 🧪 Strategy & performance comparison
+
+---
+
+## 🧠 Supported AI Models
+
+- **OpenAI** – GPT-4o, o3-mini  
+- **Anthropic** – Claude  
+- **Google** – Gemini  
+- **Groq** – LLaMA 3  
+
+> You can assign **different models to each player** and observe how they perform against each other.
+
+---
+
+## 🏗️ Architecture Overview
+
+The game uses **three agents**:
+
+### 1️⃣ Master Agent (Referee)
+- Controls game flow
+- Validates moves
+- Maintains board state
+- Detects win / draw conditions
+
+### 2️⃣ Player Agent X
+- Analyzes board
+- Makes strategic moves
+- Uses selected AI model
+
+### 3️⃣ Player Agent O
+- Responds to opponent moves
+- Follows game rules
+- Uses a different AI model (optional)
+
+---
+
+## 📦 Project Structure
+
+```bash
+tic_tac_toe_battle_agent/
+│
+├── app.py                  # Streamlit UI & game runner
+├── agents/                 # AI agents (Master & Players)
+├── utils/                  # Game logic & helpers
+├── requirements.txt        # Python dependencies
+├── .env.example            # Environment variable template
+└── README.md               # Project documentation
+````
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/Hazbilal3/ai_agent.git
+cd tic_tac_toe_battle_agent
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 3. Setup API Keys
+---
 
-The game supports multiple AI models. Create a `.env` file in this directory and add your API keys:
+### 3️⃣ Setup API Keys
 
-1. **Create a `.env` file:**
-   ```bash
-   # In the ai_tic_tac_toe_agent directory
-   touch .env
-   ```
+Create a `.env` file in the project root:
 
-2. **Add your API keys to the `.env` file:**
-   ```env
-   # Required for OpenAI models (gpt-4o, o3-mini)
-   OPENAI_API_KEY=your_actual_openai_api_key_here
+```bash
+touch .env
+```
 
-   # Optional - for additional models
-   ANTHROPIC_API_KEY=your_actual_anthropic_api_key_here  # For Claude models
-   GOOGLE_API_KEY=your_actual_google_api_key_here        # For Gemini models
-   GROQ_API_KEY=your_actual_groq_api_key_here           # For Groq models
-   ```
+Add your API keys:
 
-   > **Note:** Replace the placeholder values with your actual API keys. The app will show helpful error messages if required keys are missing.
+```env
+# OpenAI (Required for GPT models)
+OPENAI_API_KEY=your_openai_api_key
 
-### 4. Run the Game
+# Optional Providers
+ANTHROPIC_API_KEY=your_anthropic_key
+GOOGLE_API_KEY=your_google_key
+GROQ_API_KEY=your_groq_key
+```
 
-```shell
+⚠️ **Note:**
+
+* Only add keys for models you plan to use
+* The app will show helpful errors if a key is missing
+
+---
+
+### 4️⃣ Run the Application
+
+```bash
 streamlit run app.py
 ```
 
-- Open [localhost:8501](http://localhost:8501) to view the game interface
+Open your browser and go to:
+👉 **[http://localhost:8501](http://localhost:8501)**
 
-## How It Works
+---
 
-The game consists of three agents:
+## 🎮 How to Play
 
-1. **Master Agent (Referee)**
-   - Coordinates the game
-   - Validates moves
-   - Maintains game state
-   - Determines game outcome
+1. Select AI models for **Agent X** and **Agent O**
+2. Start the game
+3. Watch both AI agents compete in real time
+4. View:
 
-2. **Two Player Agents**
-   - Make strategic moves
-   - Analyze board state
-   - Follow game rules
-   - Respond to opponent moves
+   * Board updates
+   * Move history
+   * Game outcome (Win / Draw)
 
-## Available Models
+---
 
-The game supports various AI models:
-- GPT-4o (OpenAI)
-- GPT-o3-mini (OpenAI)
-- Gemini (Google)
-- Llama 3 (Groq)
-- Claude (Anthropic)
+## 📊 Game Insights
 
-## Game Features
+* Compare decision-making between different LLMs
+* Observe strategy patterns
+* Analyze move timing & efficiency
 
-1. **Interactive Board**
-   - Real-time updates
-   - Visual move tracking
-   - Clear game status display
+---
 
-2. **Move History**
-   - Detailed move tracking
-   - Board state visualization
-   - Player action timeline
+## 🧪 Use Cases
 
-3. **Game Controls**
-   - Start/Pause game
-   - Reset board
-   - Select AI models
-   - View game history
+* Learning **multi-agent AI systems**
+* Comparing LLM reasoning abilities
+* Autonomous game-playing research
+* Streamlit + AI agent integration demo
 
-4. **Performance Analysis**
-   - Move timing
-   - Strategy tracking
-   - Game statistics
+---
+
+## 🛠️ Tech Stack
+
+* **Python**
+* **Streamlit**
+* **Agno Agent Framework**
+* **OpenAI / Anthropic / Google / Groq APIs**
+
+---
+
+## 📌 Future Improvements
+
+* Human vs AI mode
+* Difficulty levels
+* Tournament mode
+* Game analytics dashboard
+* Reinforcement learning integration
+
+---
+
+## 👤 Author
+
+**Hazbilal**
+🔗 GitHub: [https://github.com/Hazbilal3](https://github.com/Hazbilal3)
+
+---
+
+⭐ If you like this project, don't forget to **star the repository**!
+
+
