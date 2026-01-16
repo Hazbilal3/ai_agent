@@ -1,12 +1,18 @@
-# Financial Advisor Agent 💰
-> **Personalized Wealth Management | Multi-Agent System**
 
-[![Author](https://img.shields.io/badge/Author-Dan--445-blue.svg)](https://github.com/Dan-445)
+# Financial Advisor Agent 💰
+> Personalized Wealth Management using a Multi-Agent AI System
+
+[![Author](https://img.shields.io/badge/Author-Hazbilal3-blue.svg)](https://github.com/Hazbilal3)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Google ADK](https://img.shields.io/badge/Google%20ADK-Enabled-4285F4.svg)](https://github.com/google/generative-ai-python)
 [![Gemini](https://img.shields.io/badge/Gemini-2.5%20Flash-8E44AD.svg)](https://deepmind.google/technologies/gemini/)
 
-The **Financial Advisor Agent** is a sophisticated multi-agent system designed to act as your personal CFO. Powered by Google's Agent Development Kit (ADK) and Gemini 2.5, it orchestrates specialized agents to analyze your budget, optimize savings, and destroy debt.
+The **Financial Advisor Agent** is a local, multi-agent AI system designed to function like a personal CFO.  
+It coordinates specialized agents to analyze spending, optimize savings, and strategically eliminate debt using structured financial reasoning.
+
+This implementation is adapted specifically for the **ai_agent** repository.
+
+---
 
 ## 🏗 Architecture
 
@@ -14,72 +20,147 @@ The **Financial Advisor Agent** is a sophisticated multi-agent system designed t
 graph TD
     User([User Financial Data]) --> Coordinator[Coordinator Agent]
     Coordinator --> Budget[Budget Analysis Agent]
-    Budget -- Analysis --> Savings[Savings Strategy Agent]
-    Savings -- Analysis + Strategy --> Debt[Debt Reduction Agent]
+    Budget --> Savings[Savings Strategy Agent]
+    Savings --> Debt[Debt Reduction Agent]
     Debt --> Plan([Comprehensive Financial Plan])
-    
-    subgraph "Agent Responsibilities"
-    Budget -->|Categorize & Audit| B_Out[Spending Pattern Detection]
-    Savings -->|Allocate & Protect| S_Out[Emergency Fund & Automation]
-    Debt -->|Optimize & Eliminate| D_Out[Avalanche/Snowball Strategy]
+
+    subgraph Agent_Responsibilities
+        Budget -->|Categorize and Audit| B_Out[Spending Insights]
+        Savings -->|Allocate and Protect| S_Out[Savings Automation]
+        Debt -->|Optimize and Eliminate| D_Out[Debt Payoff Strategy]
     end
-    
+
     style Coordinator fill:#f9f,stroke:#333,stroke-width:2px
     style Budget fill:#bbf,stroke:#333,stroke-width:2px
     style Savings fill:#bfb,stroke:#333,stroke-width:2px
     style Debt fill:#fbb,stroke:#333,stroke-width:2px
-```
+````
+
+---
 
 ## ✨ Specialized Agents
 
-### 1. 📊 Budget Analysis Agent
-- **Role**: The Auditor
-- **Function**: Ingests transaction data (CSV or manual), categorizes expenses, and identifies leakage.
-- **Output**: Detailed spending breakdown and immediate cost-cutting recommendations.
+### 1. Budget Analysis Agent
 
-### 2. 🐷 Savings Strategy Agent
-- **Role**: The Planner
-- **Function**: Calculates optimal emergency fund size and allocates surplus income to high-yield goals.
-- **Output**: Automation techniques and staged savings targets.
+* **Role**: Financial Auditor
+* **Function**: Processes transaction data (CSV or manual input), categorizes expenses, and detects overspending
+* **Output**: Spending breakdown with actionable cost-reduction insights
 
-### 3. 💳 Debt Reduction Agent
-- **Role**: The Strategist
-- **Function**: mathematically optimizes debt payoff using Avalanche (save interest) vs. Snowball (psychological wins) methods.
-- **Output**: Exact payoff timeline and total interest savings.
+### 2. Savings Strategy Agent
+
+* **Role**: Financial Planner
+* **Function**: Calculates emergency fund targets and allocates surplus income intelligently
+* **Output**: Savings automation plan and milestone-based goals
+
+### 3. Debt Reduction Agent
+
+* **Role**: Debt Strategist
+* **Function**: Optimizes debt repayment using Avalanche and Snowball methodologies
+* **Output**: Payoff timeline and projected interest savings
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.10+
-- Google API Key (Gemini)
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Dan-445/awesome-llm-apps.git
-   cd advanced_ai_agents/multi_agent_apps/financial_advisor_agent
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Configure Environment**
-   Create a `.env` file:
-   ```bash
-   GOOGLE_API_KEY=your_actual_api_key_here
-   ```
-
-4. **Run the Advisor**
-   ```bash
-    streamlit run financial_advisor_agent.py
-    ```
-
-## 📊 Data Privacy
-This agent runs **locally**. Your financial data (income, debts, transactions) is processed in-memory during the session and is **never** stored permanently or transmitted to third parties other than the LLM for inference.
+* Python 3.10+
+* Google API Key (Gemini)
 
 ---
 
-**Created by [Dan-445](https://github.com/Dan-445)**
+### Installation
+
+#### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Hazbilal3/ai_agent.git
+cd ai_agent/financial_advisor_agent
+```
+
+---
+
+#### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+#### 3. Configure Environment
+
+Create a `.env` file in the project root:
+
+```bash
+GOOGLE_API_KEY=your_actual_api_key_here
+```
+
+---
+
+#### 4. Run the Application
+
+```bash
+streamlit run financial_advisor_agent.py
+```
+
+---
+
+## ⚙️ Configuration
+
+* Upload transaction data or enter values manually
+* Adjust financial goals directly from the Streamlit interface
+* Review agent recommendations before acting on them
+
+---
+
+## 📁 Suggested Project Structure
+
+```text
+financial_advisor_agent/
+├── README.md
+├── requirements.txt
+├── financial_advisor_agent.py
+├── agents/
+│   ├── coordinator.py
+│   ├── budget_agent.py
+│   ├── savings_agent.py
+│   └── debt_agent.py
+├── utils/
+│   ├── parsers.py
+│   └── calculators.py
+```
+
+---
+
+## 🔐 Data Privacy
+
+* All processing happens locally
+* Financial data is kept in-memory during runtime only
+* No data is stored or logged permanently
+* Only anonymized prompts are sent to the LLM for inference
+
+---
+
+## 📝 Best Practices
+
+* Use recent transaction data for better accuracy
+* Review recommendations manually before execution
+* Combine avalanche and snowball methods based on risk tolerance
+* Re-run analysis monthly for updated insights
+
+---
+
+## 📌 Notes
+
+* Designed for personal finance planning and advisory use
+* Not a replacement for licensed financial professionals
+* Output quality improves with cleaner input data
+
+---
+
+## 🙌 Credits
+
+Inspired by autonomous finance agent architectures
+Adapted and maintained for this repository by **Hazbilal3**
+
