@@ -1,37 +1,138 @@
-## 📄 Chat with PDF 
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-llm-app-with-rag-using-llama-3-2-running-locally) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+# 📄 Chat with PDF (RAG-based PDF Q&A Agent)
 
-LLM app with RAG to chat with PDF in just 30 lines of Python Code. The app uses Retrieval Augmented Generation (RAG) to provide accurate answers to questions based on the content of the uploaded PDF.
+### 🎓 FREE Step-by-Step Tutorial
+👉 https://www.theunwindai.com/p/build-an-llm-app-with-rag-using-llama-3-2-running-locally  
 
-### Features
+Learn how to build this project from scratch with clear explanations, minimal code, and best practices.
+
+---
+
+The **Chat with PDF Agent** is a simple yet powerful LLM application that lets you **upload a PDF and ask questions about its content**.  
+It uses **Retrieval Augmented Generation (RAG)** to ensure that answers are grounded in the actual document instead of hallucinated responses.
+
+This version is adapted and structured specifically for the **ai_agent** repository.
+
+---
+
+## ✨ Features
 
 - Upload a PDF document
-- Ask questions about the content of the PDF
-- Get accurate answers using RAG and the selected LLM
+- Ask natural language questions about the PDF
+- Accurate, context-aware answers using RAG
+- Lightweight implementation with minimal code
+- Interactive Streamlit user interface
 
-### How to get Started?
+---
 
-1. Clone the GitHub repository
+## 🧠 How It Works
+
+1. User uploads a PDF file  
+2. Text is extracted from the PDF  
+3. Text is split into smaller chunks  
+4. Embeddings are generated for each chunk  
+5. Relevant chunks are retrieved based on the question  
+6. The LLM generates an answer using only retrieved context  
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.10+
+- OpenAI API Key or any compatible LLM provider
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-cd awesome-llm-apps/chat_with_X_tutorials/chat_with_pdf
-```
-2. Install the required dependencies
+git clone https://github.com/Hazbilal3/ai_agent.git
+cd ai_agent/pdf_chat_rag_agent
+````
+
+---
+
+### 2️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
-3. Get your OpenAI API Key
 
-- Sign up for an [OpenAI account](https://platform.openai.com/) (or the LLM provider of your choice) and obtain your API key.
+---
 
-4. Run the Streamlit App
+### 3️⃣ Configure API Key
+
+**Linux or macOS**
+
+```bash
+export OPENAI_API_KEY="your_api_key_here"
+```
+
+**Windows PowerShell**
+
+```powershell
+setx OPENAI_API_KEY "your_api_key_here"
+```
+
+---
+
+### 4️⃣ Run the Application
+
 ```bash
 streamlit run chat_pdf.py
 ```
-### Interactive Application Demo
-https://github.com/Shubhamsaboo/awesome-llm-apps/assets/31396011/12bdfc11-c877-4fc7-9e70-63f21d2eb977
+
+---
+
+## 🎥 Interactive Application Demo
+
+👉 Demo recording
+[https://github.com/Shubhamsaboo/awesome-llm-apps/assets/31396011/12bdfc11-c877-4fc7-9e70-63f21d2eb977](https://github.com/Shubhamsaboo/awesome-llm-apps/assets/31396011/12bdfc11-c877-4fc7-9e70-63f21d2eb977)
+
+---
+
+## 📁 Project Structure
+
+```text
+pdf_chat_rag_agent/
+├── README.md
+├── requirements.txt
+├── chat_pdf.py
+├── utils/
+│   ├── pdf_loader.py
+│   ├── text_splitter.py
+│   ├── embeddings.py
+│   └── retriever.py
+```
+
+---
+
+## 🛠 Tech Stack
+
+* Python
+* Streamlit
+* OpenAI or compatible LLM
+* Embeddings and vector search
+* Retrieval Augmented Generation (RAG)
+
+---
+
+## 📌 Notes
+
+* Best results with text-based PDFs
+* Scanned PDFs may require OCR
+* Large PDFs may take longer to process
+* LLM provider can be swapped easily
+* Answers are limited strictly to PDF content
+
+---
+
+## 🙌 Credits
+
+Original inspiration from **awesome-llm-apps**
+Adapted and maintained for this repository by **Hazbilal3**
 
